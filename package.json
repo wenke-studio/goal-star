@@ -53,5 +53,8 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "dependencies": {
+    "svelte-clerk": "^0.13.4"
   }
 }

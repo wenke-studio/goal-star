@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { ClerkProvider } from "svelte-clerk";
+
   import Footer from "$lib/components/footer.svelte";
   import Header from "$lib/components/header.svelte";
   import Main from "$lib/components/main.svelte";
@@ -7,8 +9,10 @@
   let { children } = $props();
 </script>
 
-<Header />
-<Main>
-  {@render children()}
-</Main>
-<Footer />
+<ClerkProvider>
+  <Header />
+  <Main>
+    {@render children()}
+  </Main>
+  <Footer />
+</ClerkProvider>
