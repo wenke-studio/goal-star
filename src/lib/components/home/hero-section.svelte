@@ -11,7 +11,7 @@
       讓朋友見證你的目標達成！設定目標，邀請好友檢查進度，一起成就更好的自己
     </p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
-      <Button size="lg" class="px-8 py-4 text-lg">開始設定目標</Button>
+      <Button size="lg" class="px-8 py-4 text-lg" href="/game">開始設定目標</Button>
       <Button variant="outline" size="lg" class="px-8 py-4 text-lg">了解更多</Button>
     </div>
   </div>

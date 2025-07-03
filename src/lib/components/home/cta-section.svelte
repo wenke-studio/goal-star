@@ -11,7 +11,7 @@
       加入 Goal Star 社群，與朋友一起見證彼此的成長
     </p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
-      <Button size="lg" class="px-8 py-4 text-lg">立即註冊</Button>
+      <Button size="lg" class="px-8 py-4 text-lg" href="/game">立即開始</Button>
     </div>
   </div>
 </section>
