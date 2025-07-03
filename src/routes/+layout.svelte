@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ClerkProvider } from "svelte-clerk";
+  import { Toaster } from "$lib/components/shadcn/sonner";
 
   import Footer from "$lib/components/footer.svelte";
   import Header from "$lib/components/header.svelte";
@@ -15,4 +16,5 @@
     {@render children()}
   </Main>
   <Footer />
+  <Toaster />
 </ClerkProvider>
