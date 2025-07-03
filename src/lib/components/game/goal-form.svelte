@@ -5,14 +5,14 @@
   import { Textarea } from "$lib/components/shadcn/textarea";
 
   interface GoalFormData {
-    name: string;
+    title: string;
     description: string;
     deadline: string;
     friendEmail: string;
   }
 
   let formData: GoalFormData = $state({
-    name: "",
+    title: "",
     description: "",
     deadline: "",
     friendEmail: ""
@@ -22,8 +22,8 @@
 
   function handleSubmit() {
     isSubmitting = true;
-    
-    if (!formData.name || !formData.description || !formData.deadline || !formData.friendEmail) {
+
+    if (!formData.title || !formData.description || !formData.deadline || !formData.friendEmail) {
       alert("請填寫所有必要欄位");
       isSubmitting = false;
       return;
@@ -32,14 +32,14 @@
     setTimeout(() => {
       console.log("Goal created:", formData);
       alert("目標設定成功！邀請已發送給你的好友。");
-      
+
       formData = {
-        name: "",
+        title: "",
         description: "",
         deadline: "",
         friendEmail: ""
       };
-      
+
       isSubmitting = false;
     }, 1000);
   }
@@ -47,19 +47,25 @@
   function getTodayDate(): string {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   }
 </script>
 
 <div class="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
-  <form onsubmit={(e) => { e.preventDefault(); handleSubmit(); }} class="space-y-6">
+  <form
+    onsubmit={(e) => {
+      e.preventDefault();
+      handleSubmit();
+    }}
+    class="space-y-6"
+  >
     <div class="space-y-2">
       <Label for="goal-name">目標名稱 *</Label>
       <Input
         id="goal-name"
-        bind:value={formData.name}
+        bind:value={formData.title}
         placeholder="例如：每天運動30分鐘"
         required
       />
@@ -114,9 +120,7 @@
   </form>
 </div>
 <div class="mt-8 rounded-lg bg-blue-50 p-6 dark:bg-blue-900/20">
-  <h3 class="mb-3 text-lg font-semibold text-blue-900 dark:text-blue-100">
-    💡 使用提示
-  </h3>
+  <h3 class="mb-3 text-lg font-semibold text-blue-900 dark:text-blue-100">💡 使用提示</h3>
   <ul class="space-y-2 text-sm text-blue-800 dark:text-blue-200">
     <li>• 設定具體、可衡量的目標，讓好友容易確認</li>
     <li>• 選擇信任的好友作為見證人</li>
