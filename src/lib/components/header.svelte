@@ -1,12 +1,14 @@
 <script lang="ts">
   import { Button } from "$lib/components/shadcn/button";
   import * as NavigationMenu from "$lib/components/shadcn/navigation-menu";
+
+  let title = "幫我看看這個";
 </script>
 
 <header class="relative w-full">
   <div class="fixed inset-x-0 top-0 z-50 container mx-auto h-16 overflow-hidden">
     <div class="bg-background/30 flex h-full items-center justify-between backdrop-blur-xs">
-      <h1>幫我看看這個</h1>
+      <h1 class="text-xl font-bold">{title}</h1>
 
       <NavigationMenu.Root>
         <NavigationMenu.List>

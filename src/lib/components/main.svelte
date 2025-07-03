@@ -11,7 +11,7 @@
 </script>
 
 <main class="relative w-full">
-  <div class="container mx-auto h-dvh border border-red-500">
+  <div class="mx-auto min-h-dvh">
     {@render children()}
   </div>
 </main>
